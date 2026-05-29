@@ -24,34 +24,4 @@ def calcular_juros(file_path):
         # Since map/filter are lazy, we cast to a list here to execute the pipeline and see results
     results = list(juros_aplicados)
 
-
-
-def agrupar_por_letra_inicial(nomes):
-    criterio = lambda nome: len(nome)
-    nomes_ordenados = sorted(nomes, key=criterio)
-    dicionario_agrupado = {
-        chave: list(grupo) 
-        for chave, grupo in groupby(nomes_ordenados, key=criterio)  
-    }
-    return dicionario_agrupado
-
-def fibonacci(n):
-    fib = lambda n: 0 if n <= 0 else (1 if n == 1 else fib(n - 1) + fib(n - 2))
-    resultado = list(map(fib, (range(n))))
-    return resultado
-
-
-def __main__():
-    #questão 1
-    calcular_juros('emprestimos_simulados.csv')
-    nomes = ['ANA', 'JOAO', 'HELENA', 'LUIS', 'PEDRO']
-    questao2 = agrupar_por_letra_inicial(nomes)
-    print(questao2)
-    # questão 3 
-    questao3 = fibonacci(10)
-    print(questao3)
-    
-
-
-if __name__ == __main__ :
-    __main__()
+calcular_juros('emprestimos_simulados.csv')
